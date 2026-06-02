@@ -1,0 +1,23 @@
+version: 1
+interface: EngineAdapter
+methods:
+  - name: capabilities
+    returns: EngineCapabilities
+  - name: start
+    input: SessionStartRequest
+    returns: SessionHandle
+  - name: health
+    input: SessionHandle
+    returns: HealthSnapshot
+  - name: stop
+    input: SessionHandle
+    returns: StopResult
+  - name: lastError
+    returns: ErrorInfo
+models:
+  EngineCapabilities:
+    fields: [engineId, protocols, supportsFallbackHints, supportsRouteOverrides]
+  SessionStartRequest:
+    fields: [profile, routeHints, timeoutMs, advancedModeEnabled]
+  HealthSnapshot:
+    fields: [status, latencyMs, packetLossPct, handshakeOk, timestamp]

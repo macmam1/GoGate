@@ -1,0 +1,13 @@
+version: 1
+weights:
+  latency: 0.35
+  stability: 0.35
+  handshakeSuccess: 0.20
+  recentSuccessRate: 0.10
+thresholds:
+  minHandshakeSuccessPct: 70
+  maxLatencyMsPreferred: 900
+  maxPacketLossPctPreferred: 8
+retestPolicy:
+  quickEveryMinutes: 10
+  deepEveryMinutes: 45

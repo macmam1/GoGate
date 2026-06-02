@@ -13,6 +13,9 @@
 10. تم‌های عملکردی: Lite / Balanced / Rich
 11. مسیر حقوقی ترجیحی: Source-Available با کنترل سوءاستفاده
 12. مرز فنی: کپی/پیاده‌سازی مستقیم MITM یا SNI-spoofing با منطق تهاجمی انجام نمی‌شود؛ فقط مودهای سازگار امن/قانونی طراحی می‌شود.
+13. هدف مقایسه با Se7en Pro: parity در سطح قابلیت/UX (نه clone دقیق باینری‌به‌باینری).
+14. مسیر ورود هسته‌ها: adapter-first (xray/sing-box سپس psiphon-compatible adapter).
+15. Harvester از منابع GitHub/subscription به‌صورت allowlist + validation + dedupe پیاده‌سازی می‌شود.
 
 ## تصمیمات باز
 - انتخاب دقیق engineهای فاز 1

@@ -1,0 +1,14 @@
+profiles:
+  - name: safe-default
+    advancedMode: false
+    maxParallelAttempts: 2
+    fallbackDepth: 2
+  - name: restricted-network
+    advancedMode: true
+    consentRequired: true
+    maxParallelAttempts: 4
+    fallbackDepth: 4
+  - name: battery-saver
+    advancedMode: false
+    maxParallelAttempts: 1
+    fallbackDepth: 1

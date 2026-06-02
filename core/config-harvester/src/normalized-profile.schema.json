@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "NormalizedProfile",
+  "type": "object",
+  "required": ["id", "source", "protocol", "endpoint", "port"],
+  "properties": {
+    "id": { "type": "string" },
+    "source": { "type": "string" },
+    "protocol": { "type": "string" },
+    "endpoint": { "type": "string" },
+    "port": { "type": "integer", "minimum": 1, "maximum": 65535 },
+    "sniHint": { "type": ["string", "null"] },
+    "tags": { "type": "array", "items": { "type": "string" } },
+    "metadata": { "type": "object" }
+  }
+}
