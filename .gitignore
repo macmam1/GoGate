@@ -1,0 +1,34 @@
+# OS / Editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+*.log
+logs/
+
+# Build artifacts
+bin/
+dist/
+out/
+release/
+
+# Secrets
+.env
+.env.*
+*.pem
+*.p12
+*.pfx
+*.key
+
+# Node
+node_modules/
+
+# Kotlin/Gradle
+.gradle/
+**/build/
+
+# .NET
+**/obj/
+**/bin/

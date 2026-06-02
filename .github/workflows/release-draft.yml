@@ -1,0 +1,21 @@
+name: Release Draft
+
+on:
+  workflow_dispatch:
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compute checksums
+        run: |
+          find . -maxdepth 2 -type f | sort > file-list.txt
+          sha256sum file-list.txt > checksums.txt
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: gogate-bootstrap-artifacts
+          path: |
+            file-list.txt
+            checksums.txt
