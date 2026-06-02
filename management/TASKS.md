@@ -5,7 +5,7 @@
 - [x] ثبت نقشه وابستگی قابلیت‌ها
 - [x] ثبت Roadmap اولیه
 - [x] نهایی‌سازی نام محصول: GoGate
-- [ ] نهایی‌سازی stack فنی
+- [x] نهایی‌سازی stack فنی (adapter-first + core go skeleton)
 - [x] تعریف PRD v1.0
 - [x] تعریف ADRها
 - [x] راه‌اندازی ریپوی GitHub
