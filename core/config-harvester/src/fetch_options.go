@@ -9,6 +9,7 @@ type FetchOptions struct {
     UserAgent string
     Observer  FetchObserver
     Metrics   *IngestionMetrics
+    Sink      EventSink
 }
 
 func normalizeFetchOptions(in FetchOptions) FetchOptions {
@@ -31,5 +32,8 @@ func reportFetch(opt FetchOptions, source string, itemCount int, err error) {
         } else {
             opt.Metrics.RecordFetchSuccess(itemCount)
         }
+    }
+    if opt.Sink != nil {
+        opt.Sink.Emit(NewFetchEvent(source, itemCount, err))
     }
 }

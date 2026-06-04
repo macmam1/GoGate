@@ -15,20 +15,23 @@ Completed:
 - [x] runtime stderr semantic parsing
 - [x] integration test fixtures for adapter lifecycle
 
-### Stage 6 — Harvester Connectors (in progress)
+### Stage 6 — Harvester Connectors (completed baseline)
 - [x] source allowlist manager
 - [x] robust Git connector handling (rate-limit/retries) baseline
 - [x] subscription ingestion scheduler baseline
 - [x] persistence hooks for scheduler state storage integration (baseline)
 - [x] ingestion metrics counters/events (baseline)
 - [x] backoff tuning from runtime policy (baseline)
-- [ ] production telemetry wiring to app-level observability
-- [ ] persistent scheduler state store adapter
+- [x] production telemetry wiring to app-level observability (baseline)
+- [x] persistent scheduler state store adapter (baseline)
 
-### Stage 7 — Probe + Scoring + Fallback Integration
-- quick/deep probe workers
-- scoring aggregation with history
-- fallback policy execution in live sessions
+### Stage 7 — Probe + Scoring + Fallback Integration (completed baseline)
+- [x] quick/deep probe worker contracts and stub implementation
+- [x] scoring aggregation helper from probe signals
+- [x] fallback policy execution integration hook in orchestrator ranking flow
+- [x] historical score blending hook in scoring layer
+- [ ] live-session fallback execution binding
+- [ ] persisted history blending source wiring
 
 ### Stage 8 — Windows App MVP (UI + Core Bridge)
 - shell screens (Home/Settings/IP Scanner/Logs/About)
@@ -51,4 +54,4 @@ Completed:
 - bug triage and stabilization
 
 ## Estimated remaining stage count
-**6 major stages remain** (Stages 6 to 11).
+**4 full major stages remain + completion items for Stage 7** (Stages 8 to 11 + Stage 7 hardening).
