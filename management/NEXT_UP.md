@@ -10,9 +10,9 @@
 - [x] harvester source registry + allowlist file format
 - [x] retry/rate-limit aware HTTP fetch layer
 - [x] ingestion scheduler skeleton
-- [ ] Git connector backoff tuning and policy knobs
-- [ ] subscription scheduler persistence hooks
-- [ ] ingestion metrics counters/events
+- [x] Git connector backoff tuning and policy knobs (baseline)
+- [x] subscription scheduler persistence hooks (scheduler hooks baseline)
+- [x] ingestion metrics counters/events (baseline)
 
 ## Next after Stage 6
 - [ ] probe worker contracts and stub implementation

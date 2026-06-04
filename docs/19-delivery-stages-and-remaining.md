@@ -19,9 +19,11 @@ Completed:
 - [x] source allowlist manager
 - [x] robust Git connector handling (rate-limit/retries) baseline
 - [x] subscription ingestion scheduler baseline
-- [ ] persistence hooks for scheduler state storage integration
-- [ ] ingestion metrics counters/events
-- [ ] backoff tuning from runtime policy
+- [x] persistence hooks for scheduler state storage integration (baseline)
+- [x] ingestion metrics counters/events (baseline)
+- [x] backoff tuning from runtime policy (baseline)
+- [ ] production telemetry wiring to app-level observability
+- [ ] persistent scheduler state store adapter
 
 ### Stage 7 — Probe + Scoring + Fallback Integration
 - quick/deep probe workers

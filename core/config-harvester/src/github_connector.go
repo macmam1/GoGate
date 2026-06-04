@@ -54,25 +54,41 @@ func FetchGitHubFileWithOptions(ctx context.Context, src GitHubSource, client HT
         return req, nil
     }, cfg.Retry)
     if err != nil {
+        reportFetch(cfg, apiURL, 0, err)
         return nil, err
     }
     defer resp.Body.Close()
 
     if resp.StatusCode >= 400 {
         body, _ := io.ReadAll(resp.Body)
-        return nil, fmt.Errorf("github source fetch failed: %s: %s", resp.Status, string(body))
+        err := fmt.Errorf("github source fetch failed: %s: %s", resp.Status, string(body))
+        reportFetch(cfg, apiURL, 0, err)
+        return nil, err
     }
 
     var parsed githubContentResponse
     if err := json.NewDecoder(resp.Body).Decode(&parsed); err != nil {
+        if cfg.Metrics != nil {
+            cfg.Metrics.RecordParseFail()
+        }
+        reportFetch(cfg, apiURL, 0, err)
         return nil, err
     }
 
     if parsed.Encoding != "base64" {
-        return nil, fmt.Errorf("unsupported encoding: %s", parsed.Encoding)
+        err := fmt.Errorf("unsupported encoding: %s", parsed.Encoding)
+        if cfg.Metrics != nil {
+            cfg.Metrics.RecordParseFail()
+        }
+        reportFetch(cfg, apiURL, 0, err)
+        return nil, err
     }
     raw, err := base64.StdEncoding.DecodeString(strings.ReplaceAll(parsed.Content, "\n", ""))
     if err != nil {
+        if cfg.Metrics != nil {
+            cfg.Metrics.RecordParseFail()
+        }
+        reportFetch(cfg, apiURL, 0, err)
         return nil, err
     }
 
@@ -86,5 +102,6 @@ func FetchGitHubFileWithOptions(ctx context.Context, src GitHubSource, client HT
         }
         out = append(out, RawEntry{Source: sourceLabel, Value: line})
     }
+    reportFetch(cfg, apiURL, len(out), nil)
     return out, nil
 }

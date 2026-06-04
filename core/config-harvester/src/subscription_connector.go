@@ -29,12 +29,15 @@ func FetchSubscriptionWithOptions(ctx context.Context, url string, client HTTPDo
         return req, nil
     }, cfg.Retry)
     if err != nil {
+        reportFetch(cfg, url, 0, err)
         return nil, err
     }
     defer resp.Body.Close()
 
     if resp.StatusCode >= 400 {
-        return nil, fmt.Errorf("subscription fetch failed: %s", resp.Status)
+        err := fmt.Errorf("subscription fetch failed: %s", resp.Status)
+        reportFetch(cfg, url, 0, err)
+        return nil, err
     }
 
     entries := make([]RawEntry, 0)
@@ -47,7 +50,12 @@ func FetchSubscriptionWithOptions(ctx context.Context, url string, client HTTPDo
         entries = append(entries, RawEntry{Source: url, Value: line})
     }
     if err := scanner.Err(); err != nil {
+        if cfg.Metrics != nil {
+            cfg.Metrics.RecordParseFail()
+        }
+        reportFetch(cfg, url, 0, err)
         return nil, err
     }
+    reportFetch(cfg, url, len(entries), nil)
     return entries, nil
 }
