@@ -8,10 +8,12 @@ Completed:
 4. Core runtime skeleton (contracts, orchestrator, scoring, harvester, adapter boundary)
 
 ## Remaining stages (high-level)
-### Stage 5 — Engine Runtime Integration
-- xray process adapter wiring
-- sing-box process adapter wiring
-- capability negotiation and error mapping
+### Stage 5 — Engine Runtime Integration (in progress)
+- [x] xray process adapter wiring (initial)
+- [x] sing-box process adapter wiring (initial)
+- [x] capability negotiation and base error mapping (initial)
+- [ ] runtime stderr semantic parsing
+- [ ] integration test fixtures for adapter lifecycle
 
 ### Stage 6 — Harvester Connectors (Productionized)
 - source allowlist manager
@@ -44,4 +46,4 @@ Completed:
 - bug triage and stabilization
 
 ## Estimated remaining stage count
-**7 major stages remain** (Stages 5 to 11).
+**6 full major stages remain + completion items for Stage 5**.

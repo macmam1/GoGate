@@ -23,6 +23,9 @@ Integrate runtime engines and config ingestion without rewriting existing networ
   - subscription URLs
   - allowlisted Git repositories
   - local imported files
+- Allowlist format:
+  - `core/config-harvester/sources.allowlist.txt`
+  - one source-prefix per line
 - Pipeline:
   `fetch -> parse -> normalize -> dedupe -> validate -> candidate pool`
 - Scheduler:

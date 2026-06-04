@@ -1,9 +1,11 @@
 # NEXT UP (Immediate Implementation Queue)
 
-1. Engine runtime contract stabilization
-2. xray adapter real command mapping
-3. sing-box adapter real command mapping
-4. harvester source registry + allowlist file format
-5. probe worker contracts and stub implementation
-6. Windows UI shell project bootstrap
-7. Android UI shell project bootstrap
+- [x] Engine runtime contract stabilization
+- [x] xray adapter real command mapping (skeleton)
+- [x] sing-box adapter real command mapping (skeleton)
+- [ ] harvester source registry + allowlist file format
+- [ ] probe worker contracts and stub implementation
+- [ ] Windows UI shell project bootstrap
+- [ ] Android UI shell project bootstrap
+- [ ] engine stderr parsing -> richer error mapping table
+- [ ] integration tests with mock binaries

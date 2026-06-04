@@ -1,0 +1,4 @@
+# GoGate source allowlist (phase-1 seed)
+# One prefix per line
+https://raw.githubusercontent.com/
+https://gist.githubusercontent.com/

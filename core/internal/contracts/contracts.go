@@ -3,9 +3,9 @@ package contracts
 type Mode string
 
 const (
-	ModeSafeDefault      Mode = "safe-default"
+	ModeSafeDefault       Mode = "safe-default"
 	ModeRestrictedNetwork Mode = "restricted-network"
-	ModeBatterySaver     Mode = "battery-saver"
+	ModeBatterySaver      Mode = "battery-saver"
 )
 
 type NormalizedProfile struct {
@@ -42,4 +42,10 @@ type SessionStartRequest struct {
 	Mode               Mode
 	AdvancedModeEnable bool
 	Hints              RouteHints
+
+	RuntimeConfigPath string
+	WorkingDir        string
+	AdditionalArgs    []string
+	Env               map[string]string
+	ConnectTimeoutMs  int
 }
