@@ -1,0 +1,19 @@
+version: 1
+routes:
+  home:
+    title: Home
+  settings:
+    title: Settings
+  ip_scanner:
+    title: IP Scanner
+  logs:
+    title: Logs
+  about:
+    title: About
+  server_list:
+    title: Server List
+  connection_details:
+    title: Connection Details
+nav_sets:
+  desktop: [home, settings, ip_scanner, logs, about]
+  mobile: [home, server_list, logs, settings, about]

@@ -1,0 +1,16 @@
+version: 1
+profiles:
+  lite:
+    animations: minimal
+    frame_budget_ms: 16
+    background_poll_ms: 2000
+  balanced:
+    animations: standard
+    frame_budget_ms: 16
+    background_poll_ms: 1200
+  rich:
+    animations: advanced
+    frame_budget_ms: 16
+    background_poll_ms: 800
+accessibility:
+  reduced_motion: true

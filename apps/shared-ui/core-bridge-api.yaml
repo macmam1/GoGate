@@ -1,0 +1,38 @@
+version: 1
+service: gogate-core-bridge
+transport: local_rpc
+commands:
+  - name: connect
+    request:
+      profile_id: string
+      mode: string
+    response:
+      session_id: string
+      state: string
+  - name: disconnect
+    request:
+      session_id: string
+    response:
+      state: string
+  - name: rank_candidates
+    request:
+      mode: string
+    response:
+      candidates:
+        - profile_id: string
+          score: number
+          reason: string
+  - name: fetch_logs
+    request:
+      session_id: string
+      level: string
+    response:
+      events:
+        - ts: string
+          level: string
+          message: string
+events:
+  - session_state_changed
+  - ingestion_fetch_result
+  - ranking_updated
+  - diagnostics_ready

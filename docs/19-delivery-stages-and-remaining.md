@@ -25,23 +25,27 @@ Completed:
 - [x] production telemetry wiring to app-level observability (baseline)
 - [x] persistent scheduler state store adapter (baseline)
 
-### Stage 7 — Probe + Scoring + Fallback Integration (completed baseline)
+### Stage 7 — Probe + Scoring + Fallback Integration (completed)
 - [x] quick/deep probe worker contracts and stub implementation
 - [x] scoring aggregation helper from probe signals
 - [x] fallback policy execution integration hook in orchestrator ranking flow
 - [x] historical score blending hook in scoring layer
-- [ ] live-session fallback execution binding
-- [ ] persisted history blending source wiring
+- [x] live-session fallback execution binding
+- [x] persisted history blending source wiring
 
-### Stage 8 — Windows App MVP (UI + Core Bridge)
-- shell screens (Home/Settings/IP Scanner/Logs/About)
-- state sync with orchestrator
-- theme profiles (Lite/Balanced/Rich + reduced motion)
+### Stage 8 — Windows App MVP (UI + Core Bridge) (in progress)
+- [x] shell/navigation/state scaffold specs
+- [x] shell -> core bridge API contract draft
+- [x] shell executable scaffold implementation (baseline)
+- [ ] state sync with orchestrator
+- [ ] theme profiles runtime binding (Lite/Balanced/Rich + reduced motion)
 
-### Stage 9 — Android App MVP
-- profile selection/connect flows
-- session status and log view
-- shared configuration compatibility
+### Stage 9 — Android App MVP (pre-bootstrap started)
+- [x] shell/navigation/state scaffold specs
+- [x] shell executable scaffold implementation (baseline)
+- [ ] profile selection/connect flows
+- [ ] session status and log view
+- [ ] shared configuration compatibility
 
 ### Stage 10 — Packaging & Release Hardening
 - installer pipeline
@@ -54,4 +58,4 @@ Completed:
 - bug triage and stabilization
 
 ## Estimated remaining stage count
-**4 full major stages remain + completion items for Stage 7** (Stages 8 to 11 + Stage 7 hardening).
+**4 major stages remain** (Stages 8 to 11).

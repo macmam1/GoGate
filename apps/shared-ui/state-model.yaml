@@ -1,0 +1,16 @@
+version: 1
+session_states:
+  - idle
+  - connecting
+  - connected
+  - fallback
+  - failed
+core_panels:
+  home:
+    widgets: [status_card, quick_connect, profile_chip]
+  settings:
+    widgets: [mode_selector, theme_selector, advanced_gate]
+  logs:
+    widgets: [event_stream, export_button]
+  ip_scanner:
+    widgets: [scan_controls, result_table, apply_button]

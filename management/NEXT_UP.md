@@ -16,12 +16,17 @@
 - [x] app-level event sink wiring (baseline)
 - [x] persistent scheduler state store adapter (baseline)
 
-## Stage 7 focus (baseline complete)
+## Stage 7 focus (hardening complete)
 - [x] probe worker contracts and stub implementation
 - [x] probe -> scoring aggregation helper
 - [x] probe execution integration with orchestrator ranking flow
 - [x] historical score blending hooks
+- [x] live-session fallback execution binding
+- [x] persisted history source wiring
 
 ## Stage 8 next focus (active)
-- [ ] Windows UI shell project bootstrap
-- [ ] Android UI shell project bootstrap
+- [x] Windows UI shell project bootstrap (spec + nav/state scaffold)
+- [x] Android UI shell project bootstrap (spec + nav/state scaffold)
+- [x] Windows shell executable scaffold implementation (baseline)
+- [x] Android shell executable scaffold implementation (baseline)
+- [x] shell -> core bridge API contract file
