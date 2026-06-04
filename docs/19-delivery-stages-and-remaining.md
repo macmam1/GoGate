@@ -8,17 +8,20 @@ Completed:
 4. Core runtime skeleton (contracts, orchestrator, scoring, harvester, adapter boundary)
 
 ## Remaining stages (high-level)
-### Stage 5 — Engine Runtime Integration (in progress)
+### Stage 5 — Engine Runtime Integration (completed baseline)
 - [x] xray process adapter wiring (initial)
 - [x] sing-box process adapter wiring (initial)
 - [x] capability negotiation and base error mapping (initial)
-- [ ] runtime stderr semantic parsing
-- [ ] integration test fixtures for adapter lifecycle
+- [x] runtime stderr semantic parsing
+- [x] integration test fixtures for adapter lifecycle
 
-### Stage 6 — Harvester Connectors (Productionized)
-- source allowlist manager
-- robust Git connector handling (rate-limit/retries)
-- subscription ingestion scheduler
+### Stage 6 — Harvester Connectors (in progress)
+- [x] source allowlist manager
+- [x] robust Git connector handling (rate-limit/retries) baseline
+- [x] subscription ingestion scheduler baseline
+- [ ] persistence hooks for scheduler state storage integration
+- [ ] ingestion metrics counters/events
+- [ ] backoff tuning from runtime policy
 
 ### Stage 7 — Probe + Scoring + Fallback Integration
 - quick/deep probe workers
@@ -46,4 +49,4 @@ Completed:
 - bug triage and stabilization
 
 ## Estimated remaining stage count
-**6 full major stages remain + completion items for Stage 5**.
+**6 major stages remain** (Stages 6 to 11).
