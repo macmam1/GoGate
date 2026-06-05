@@ -31,5 +31,7 @@
 - [x] Android shell executable scaffold implementation (baseline)
 - [x] shell -> core bridge API contract file
 - [x] baseline bridge subscription/state sync hooks in shells
-- [ ] real bridge transport implementation (replace mock clients)
-- [ ] theme profile runtime binding in executable shells
+- [x] real bridge transport implementation (baseline local-rpc clients)
+- [x] theme profile runtime binding in executable shells (baseline)
+- [ ] bridge reconnect/error hardening in real transports
+- [ ] shell navigation host wiring

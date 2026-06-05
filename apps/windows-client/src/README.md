@@ -7,7 +7,9 @@ Current files:
 - `CoreBridgeContracts.cs` bridge command/event models
 - `ICoreBridgeClient.cs` bridge client interface
 - `MockCoreBridgeClient.cs` mock implementation for local testing
+- `LocalRpcCoreBridgeClient.cs` real local-rpc transport client baseline
+- `ThemeRuntime.cs` runtime theme profile binding
 
 Next:
-- replace mock bridge with real local bridge transport
-- add navigation host and theme profile runtime binding
+- harden real bridge reconnect/error handling
+- add navigation host and theme profile UI binding

@@ -7,7 +7,9 @@ Current files:
 - `CoreBridgeModels.kt` bridge command/event models
 - `CoreBridgeClient.kt` bridge client interface
 - `MockCoreBridgeClient.kt` mock implementation for local testing
+- `LocalRpcCoreBridgeClient.kt` real local-rpc transport client baseline
+- `ThemeRuntime.kt` runtime theme profile binding
 
 Next:
-- replace mock bridge with real local bridge transport
+- harden real bridge reconnect/error handling
 - add session details and logs UI wiring

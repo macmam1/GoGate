@@ -1,12 +1,16 @@
 package com.gogate.android
 
 class MainActivityShell(
-    private val bridge: CoreBridgeClient = MockCoreBridgeClient()
+    private val bridge: CoreBridgeClient = LocalRpcCoreBridgeClient(),
+    private val themeRuntime: ThemeRuntime = ThemeRuntime()
 ) {
     var currentState: String = "idle"
         private set
 
     var currentSessionId: String = ""
+        private set
+
+    var themeSettings: ThemeRuntimeSettings = themeRuntime.currentSettings
         private set
 
     private val subscription = bridge.subscribe { event ->
@@ -30,6 +34,16 @@ class MainActivityShell(
         val response = bridge.disconnect(DisconnectRequest(currentSessionId))
         currentState = response.state
         currentSessionId = ""
+    }
+
+    fun applyThemeProfile(profile: String, reducedMotion: Boolean = false): ThemeRuntimeSettings {
+        val parsed = when (profile.trim().lowercase()) {
+            "lite" -> ThemeProfile.LITE
+            "rich" -> ThemeProfile.RICH
+            else -> ThemeProfile.BALANCED
+        }
+        themeSettings = themeRuntime.apply(parsed, reducedMotion)
+        return themeSettings
     }
 
     fun close() {

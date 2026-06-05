@@ -38,13 +38,17 @@ Completed:
 - [x] shell -> core bridge API contract draft
 - [x] shell executable scaffold implementation (baseline)
 - [x] state sync hook (baseline via bridge subscription)
-- [ ] state sync with real orchestrator bridge transport
-- [ ] theme profiles runtime binding (Lite/Balanced/Rich + reduced motion)
+- [x] state sync with real orchestrator bridge transport (baseline local-rpc client)
+- [x] theme profiles runtime binding (baseline)
+- [ ] bridge reconnect/error hardening
+- [ ] shell navigation host wiring
 
-### Stage 9 — Android App MVP (pre-bootstrap started)
+### Stage 9 — Android App MVP (in progress)
 - [x] shell/navigation/state scaffold specs
 - [x] shell executable scaffold implementation (baseline)
 - [x] state sync hook (baseline via bridge subscription)
+- [x] local-rpc bridge client baseline
+- [x] theme runtime profile binding baseline
 - [ ] profile selection/connect flows
 - [ ] session status and log view
 - [ ] shared configuration compatibility
