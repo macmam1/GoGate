@@ -30,3 +30,6 @@
 - [x] Windows shell executable scaffold implementation (baseline)
 - [x] Android shell executable scaffold implementation (baseline)
 - [x] shell -> core bridge API contract file
+- [x] baseline bridge subscription/state sync hooks in shells
+- [ ] real bridge transport implementation (replace mock clients)
+- [ ] theme profile runtime binding in executable shells

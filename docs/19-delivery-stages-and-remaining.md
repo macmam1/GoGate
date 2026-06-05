@@ -37,12 +37,14 @@ Completed:
 - [x] shell/navigation/state scaffold specs
 - [x] shell -> core bridge API contract draft
 - [x] shell executable scaffold implementation (baseline)
-- [ ] state sync with orchestrator
+- [x] state sync hook (baseline via bridge subscription)
+- [ ] state sync with real orchestrator bridge transport
 - [ ] theme profiles runtime binding (Lite/Balanced/Rich + reduced motion)
 
 ### Stage 9 — Android App MVP (pre-bootstrap started)
 - [x] shell/navigation/state scaffold specs
 - [x] shell executable scaffold implementation (baseline)
+- [x] state sync hook (baseline via bridge subscription)
 - [ ] profile selection/connect flows
 - [ ] session status and log view
 - [ ] shared configuration compatibility

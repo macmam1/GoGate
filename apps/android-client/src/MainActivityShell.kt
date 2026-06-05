@@ -1,20 +1,38 @@
 package com.gogate.android
 
-class MainActivityShell {
+class MainActivityShell(
+    private val bridge: CoreBridgeClient = MockCoreBridgeClient()
+) {
     var currentState: String = "idle"
         private set
 
-    fun connect(profileId: String, mode: String) {
-        // TODO: bind to core bridge command: connect
-        currentState = "connecting"
+    var currentSessionId: String = ""
+        private set
+
+    private val subscription = bridge.subscribe { event ->
+        if (event.name == "session_state_changed") {
+            event.fields["state"]?.let { currentState = it }
+        }
     }
 
-    fun markConnected() {
-        currentState = "connected"
+    fun connect(profileId: String, mode: String) {
+        currentState = "connecting"
+        val response = bridge.connect(ConnectRequest(profileId, mode))
+        currentSessionId = response.sessionId
+        currentState = response.state
     }
 
     fun disconnect() {
-        // TODO: bind to core bridge command: disconnect
-        currentState = "idle"
+        if (currentSessionId.isBlank()) {
+            currentState = "idle"
+            return
+        }
+        val response = bridge.disconnect(DisconnectRequest(currentSessionId))
+        currentState = response.state
+        currentSessionId = ""
+    }
+
+    fun close() {
+        subscription.dispose()
     }
 }
