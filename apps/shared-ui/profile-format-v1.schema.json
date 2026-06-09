@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "GoGateSharedProfileV1",
+  "type": "object",
+  "required": ["version", "profiles"],
+  "properties": {
+    "version": { "type": "string", "enum": ["v1"] },
+    "profiles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "location", "protocol"],
+        "properties": {
+          "id": { "type": "string" },
+          "title": { "type": "string" },
+          "location": { "type": "string" },
+          "protocol": { "type": "string" }
+        }
+      }
+    }
+  }
+}

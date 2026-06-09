@@ -10,8 +10,12 @@ Current files:
 - `MockCoreBridgeClient.cs` mock implementation for local testing
 - `LocalRpcCoreBridgeClient.cs` real local-rpc transport client baseline (+ reconnect/backoff hardening)
 - `ThemeRuntime.cs` runtime theme profile binding
+- `ShellModels.cs` profile/session runtime models
+- `BridgeHealthIndicator.cs` health badge view-model mapper
+- `ShellPageBindings.cs` runtime-to-page binding layer
+- `SharedProfileConfig.cs` shared profile format parser/serializer
 
 Next:
-- add shell navigation host -> real page/view wiring
-- expose bridge health indicator in UI status card
-- bind profile list/session details/log panel widgets to shell runtime methods
+- bind shell navigation host/pages to concrete UI views
+- wire bridge health indicator widget in status card
+- shared profile import/export flows in UI

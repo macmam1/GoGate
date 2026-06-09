@@ -42,8 +42,10 @@ Completed:
 - [x] theme profiles runtime binding (baseline)
 - [x] bridge reconnect/error hardening (baseline)
 - [x] shell navigation host wiring (baseline)
-- [ ] shell navigation host -> actual page/view wiring
-- [ ] bridge health indicator component wiring
+- [x] shell navigation host -> page binding layer wiring (baseline)
+- [x] bridge health indicator component wiring (baseline)
+- [ ] concrete UI page/view wiring
+- [ ] concrete bridge-health status-card widget wiring
 
 ### Stage 9 — Android App MVP (in progress)
 - [x] shell/navigation/state scaffold specs
@@ -55,8 +57,9 @@ Completed:
 - [x] shell navigation host wiring (baseline)
 - [x] profile selection/connect flows (baseline shell wiring)
 - [x] session status and log view access (baseline shell wiring)
-- [ ] shared configuration compatibility
-- [ ] UI page/view binding for profile + logs screens
+- [x] shared configuration compatibility (baseline shared schema/parser)
+- [x] UI page binding layer for profile + logs screens (baseline)
+- [ ] concrete Android page/view wiring
 
 ### Stage 10 — Packaging & Release Hardening
 - installer pipeline

@@ -1,0 +1,17 @@
+{
+  "version": "v1",
+  "profiles": [
+    {
+      "id": "profile-a",
+      "title": "Fast Route A",
+      "location": "DE",
+      "protocol": "vless"
+    },
+    {
+      "id": "profile-b",
+      "title": "Fallback Route B",
+      "location": "NL",
+      "protocol": "vmess"
+    }
+  ]
+}

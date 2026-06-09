@@ -37,5 +37,7 @@
 - [x] shell navigation host wiring (baseline)
 - [x] shell profile selection/connect flow wiring (baseline)
 - [x] shell session details/log access wiring (baseline)
-- [ ] shell navigation host -> actual page/view binding
-- [ ] bridge health indicator component wiring
+- [x] shell navigation host -> page binding layer wiring (baseline)
+- [x] bridge health indicator component wiring (baseline)
+- [ ] concrete UI page/view integration for navigation routes
+- [ ] concrete status-card widget integration for bridge health
