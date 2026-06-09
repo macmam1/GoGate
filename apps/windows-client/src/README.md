@@ -14,3 +14,4 @@ Current files:
 Next:
 - add shell navigation host -> real page/view wiring
 - expose bridge health indicator in UI status card
+- bind profile list/session details/log panel widgets to shell runtime methods

@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace GoGate.WindowsClient;
 
@@ -9,8 +11,11 @@ public class MainWindowShell : IDisposable
     private readonly NavigationHost _navigationHost;
     private IDisposable? _subscription;
 
+    private List<ProfileItem> _profiles = new();
+
     public string CurrentState { get; private set; } = "idle";
     public string CurrentSessionId { get; private set; } = string.Empty;
+    public string SelectedProfileId { get; private set; } = string.Empty;
     public ThemeRuntimeSettings ThemeSettings { get; private set; } = new("standard", 16, 1200, false);
     public string CurrentRoute => _navigationHost.CurrentRoute;
 
@@ -30,6 +35,32 @@ public class MainWindowShell : IDisposable
         ThemeSettings = _themeRuntime.CurrentSettings;
         _navigationHost.OnRouteChanged += route => OnRouteChanged?.Invoke(route);
         _subscription = _bridge.Subscribe(HandleBridgeEvent);
+    }
+
+    public IReadOnlyList<ProfileItem> Profiles() => _profiles;
+
+    public void SetProfiles(IEnumerable<ProfileItem> profiles)
+    {
+        _profiles = profiles?.ToList() ?? new List<ProfileItem>();
+        if (string.IsNullOrWhiteSpace(SelectedProfileId) && _profiles.Count > 0)
+            SelectedProfileId = _profiles[0].Id;
+    }
+
+    public bool SelectProfile(string profileId)
+    {
+        if (_profiles.Any(p => p.Id == profileId))
+        {
+            SelectedProfileId = profileId;
+            return true;
+        }
+        return false;
+    }
+
+    public void QuickConnect(string mode)
+    {
+        if (string.IsNullOrWhiteSpace(SelectedProfileId))
+            return;
+        Connect(SelectedProfileId, mode);
     }
 
     public void Connect(string profileId, string mode)
@@ -56,6 +87,15 @@ public class MainWindowShell : IDisposable
         CurrentState = response.State;
         CurrentSessionId = string.Empty;
         OnStateChanged?.Invoke(CurrentState);
+    }
+
+    public SessionDetails GetSessionDetails() => new(CurrentSessionId, CurrentState, BridgeHealthy, LastBridgeReason);
+
+    public FetchLogsResponse GetLogs(string level = "info")
+    {
+        if (string.IsNullOrWhiteSpace(CurrentSessionId))
+            return new FetchLogsResponse(Array.Empty<LogEvent>());
+        return _bridge.FetchLogs(CurrentSessionId, level);
     }
 
     public ThemeRuntimeSettings ApplyThemeProfile(string profile, bool reducedMotion = false)

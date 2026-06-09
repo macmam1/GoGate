@@ -11,6 +11,9 @@ class MainActivityShell(
     var currentSessionId: String = ""
         private set
 
+    var selectedProfileId: String = ""
+        private set
+
     var themeSettings: ThemeRuntimeSettings = themeRuntime.currentSettings
         private set
 
@@ -22,6 +25,8 @@ class MainActivityShell(
 
     var lastBridgeReason: String = "ok"
         private set
+
+    private var profiles: List<ProfileItem> = emptyList()
 
     private val navSub = navigationHost.subscribe { route ->
         currentRoute = route
@@ -35,6 +40,28 @@ class MainActivityShell(
                 lastBridgeReason = event.fields["reason"] ?: "unknown"
             }
         }
+    }
+
+    fun setProfiles(items: List<ProfileItem>) {
+        profiles = items
+        if (selectedProfileId.isBlank() && profiles.isNotEmpty()) {
+            selectedProfileId = profiles.first().id
+        }
+    }
+
+    fun getProfiles(): List<ProfileItem> = profiles
+
+    fun selectProfile(profileId: String): Boolean {
+        if (profiles.any { it.id == profileId }) {
+            selectedProfileId = profileId
+            return true
+        }
+        return false
+    }
+
+    fun quickConnect(mode: String) {
+        if (selectedProfileId.isBlank()) return
+        connect(selectedProfileId, mode)
     }
 
     fun connect(profileId: String, mode: String) {
@@ -52,6 +79,18 @@ class MainActivityShell(
         val response = bridge.disconnect(DisconnectRequest(currentSessionId))
         currentState = response.state
         currentSessionId = ""
+    }
+
+    fun getSessionDetails(): SessionDetails = SessionDetails(
+        sessionId = currentSessionId,
+        state = currentState,
+        bridgeHealthy = bridgeHealthy,
+        bridgeReason = lastBridgeReason
+    )
+
+    fun getLogs(level: String = "info"): FetchLogsResponse {
+        if (currentSessionId.isBlank()) return FetchLogsResponse(emptyList())
+        return bridge.fetchLogs(currentSessionId, level)
     }
 
     fun applyThemeProfile(profile: String, reducedMotion: Boolean = false): ThemeRuntimeSettings {

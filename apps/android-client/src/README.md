@@ -13,4 +13,5 @@ Current files:
 
 Next:
 - wire route host to actual Android navigation/pages
-- add session details and logs UI wiring
+- bind profile list/session details/log widgets to shell runtime methods
+- shared configuration compatibility wiring

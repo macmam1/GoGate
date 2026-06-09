@@ -35,5 +35,7 @@
 - [x] theme profile runtime binding in executable shells (baseline)
 - [x] bridge reconnect/error hardening in real transports (baseline)
 - [x] shell navigation host wiring (baseline)
+- [x] shell profile selection/connect flow wiring (baseline)
+- [x] shell session details/log access wiring (baseline)
 - [ ] shell navigation host -> actual page/view binding
 - [ ] bridge health indicator component wiring

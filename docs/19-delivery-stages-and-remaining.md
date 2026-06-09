@@ -53,9 +53,10 @@ Completed:
 - [x] theme runtime profile binding baseline
 - [x] bridge reconnect/error hardening (baseline)
 - [x] shell navigation host wiring (baseline)
-- [ ] profile selection/connect flows
-- [ ] session status and log view
+- [x] profile selection/connect flows (baseline shell wiring)
+- [x] session status and log view access (baseline shell wiring)
 - [ ] shared configuration compatibility
+- [ ] UI page/view binding for profile + logs screens
 
 ### Stage 10 — Packaging & Release Hardening
 - installer pipeline
