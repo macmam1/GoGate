@@ -40,8 +40,10 @@ Completed:
 - [x] state sync hook (baseline via bridge subscription)
 - [x] state sync with real orchestrator bridge transport (baseline local-rpc client)
 - [x] theme profiles runtime binding (baseline)
-- [ ] bridge reconnect/error hardening
-- [ ] shell navigation host wiring
+- [x] bridge reconnect/error hardening (baseline)
+- [x] shell navigation host wiring (baseline)
+- [ ] shell navigation host -> actual page/view wiring
+- [ ] bridge health indicator component wiring
 
 ### Stage 9 — Android App MVP (in progress)
 - [x] shell/navigation/state scaffold specs
@@ -49,6 +51,8 @@ Completed:
 - [x] state sync hook (baseline via bridge subscription)
 - [x] local-rpc bridge client baseline
 - [x] theme runtime profile binding baseline
+- [x] bridge reconnect/error hardening (baseline)
+- [x] shell navigation host wiring (baseline)
 - [ ] profile selection/connect flows
 - [ ] session status and log view
 - [ ] shared configuration compatibility

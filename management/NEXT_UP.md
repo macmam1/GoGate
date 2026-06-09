@@ -33,5 +33,7 @@
 - [x] baseline bridge subscription/state sync hooks in shells
 - [x] real bridge transport implementation (baseline local-rpc clients)
 - [x] theme profile runtime binding in executable shells (baseline)
-- [ ] bridge reconnect/error hardening in real transports
-- [ ] shell navigation host wiring
+- [x] bridge reconnect/error hardening in real transports (baseline)
+- [x] shell navigation host wiring (baseline)
+- [ ] shell navigation host -> actual page/view binding
+- [ ] bridge health indicator component wiring

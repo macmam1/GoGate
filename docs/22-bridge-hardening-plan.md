@@ -4,12 +4,12 @@
 Make shell bridge transports resilient when core runtime is unavailable or unstable.
 
 ## Work items
-1. Exponential reconnect backoff with cap
-2. Circuit-breaker style temporary cooldown after repeated failures
-3. Command timeout classification and user-facing reason mapping
-4. Event poll dedupe + sequence guards
-5. Bridge health indicator for UI status card
-6. Graceful fallback to mock/offline mode for developer testing
+1. [x] Exponential reconnect backoff with cap (baseline)
+2. [ ] Circuit-breaker style temporary cooldown after repeated failures
+3. [ ] Command timeout classification and user-facing reason mapping
+4. [x] Event poll dedupe + sequence guards (baseline)
+5. [ ] Bridge health indicator for UI status card
+6. [ ] Graceful fallback to mock/offline mode for developer testing
 
 ## Exit criteria
 - no tight retry loops under bridge outage
